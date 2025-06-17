@@ -1,4 +1,5 @@
-graph TD
+```mermaid
+graph TD;
     A[ユーザーが質問を入力] --> B{AIが外部ナレッジから関連内容を検索};
     B --> C[ベクトルデータベースから情報を検索];
     C --> D[質問に関連性の高い情報をコンテキストとして抽出];
@@ -32,3 +33,4 @@ graph TD
     linkStyle 3 stroke-width:2px,stroke:blue;
     linkStyle 5 stroke-width:2px,stroke:blue;
     linkStyle 7 stroke-width:2px,stroke:blue;
+```
