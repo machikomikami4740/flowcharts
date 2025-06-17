@@ -1,0 +1,34 @@
+graph TD
+    A[ユーザーのQuery（質問）] --> B[Embedding (埋め込み)];
+    B --> C[Vector database (ベクトルデータベース) で類似検索];
+    C --> D[関連するContext (情報) を取得];
+    D --> E[QueryとContextを結合してPromptをAugment (拡張)];
+    E --> F[Augmented PromptをLLMに連携];
+    F --> G[LLMがResponse (回答) をGenerate (生成)];
+    G --> H[Response (回答) をユーザーに出力];
+
+    subgraph 段階
+        subgraph ① Retrieve (検索)
+            B
+            C
+            D
+        end
+
+        subgraph ② Augment (拡張)
+            E
+        end
+
+        subgraph ③ Generate (生成)
+            F
+            G
+        end
+    end
+
+    style A fill:#ADD8E6,stroke:#333,stroke-width:2px;
+    style B fill:#87CEEB,stroke:#333,stroke-width:2px;
+    style C fill:#87CEEB,stroke:#333,stroke-width:2px;
+    style D fill:#87CEEB,stroke:#333,stroke-width:2px;
+    style E fill:#90EE90,stroke:#333,stroke-width:2px;
+    style F fill:#DDA0DD,stroke:#333,stroke-width:2px;
+    style G fill:#DDA0DD,stroke:#333,stroke-width:2px;
+    style H fill:#ADD8E6,stroke:#333,stroke-width:2px;
